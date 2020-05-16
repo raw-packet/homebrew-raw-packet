@@ -9,5 +9,12 @@ class RawPacket < Formula
   depends_on "python"
   depends_on "wireshark"
   depends_on "nmap"
-
+  
+  def install
+    python_version = "3.7"
+    site_packages = HOMEBREW_PREFIX/"lib/python#{python_version}/site-packages"
+    system bin/"python3", "setup.py", "install",
+               "--install-scripts=#{bin}",
+               "--install-lib=#{site_packages}"
+  end
 end
