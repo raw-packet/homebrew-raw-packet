@@ -10,8 +10,8 @@ class RawPacket < Formula
   depends_on "nmap"
 
   def install
-    ENV.prepend_create_path "PYTHONPATH", "/usr/local/lib/python3.8/site-packages"
-    system "python3", *Language::Python.setup_install_args("/usr/local/lib/python3.8/site-packages")
+    ENV.prepend_create_path "PYTHONPATH", libexec/"local/lib/python3.8/site-packages"
+    system "python3", *Language::Python.setup_install_args(libexec)
 
     bin.install Dir["/usr/local/bin/*"]
     bin.env_script_all_files("/usr/local/bin", :PYTHONPATH => ENV["PYTHONPATH"])
