@@ -10,7 +10,24 @@ class RawPacket < Formula
   depends_on "wireshark"
   depends_on "nmap"
   
+  resource "user-agents" do
+    url "https://files.pythonhosted.org/packages/1b/be/82e4d20a7716d8e5de98b948edcecff9bb237e6718c3831bd92794fe9821/user-agents-2.1.tar.gz"
+    sha256 "da54371d856c35d8ead0622da24ad5ef6d667eda3629a750e3373a3e847a054b"
+  end
+
+   resource "requests" do
+    url "https://files.pythonhosted.org/packages/f5/4f/280162d4bd4d8aad241a21aecff7a6e46891b905a4341e7ab549ebaf7915/requests-2.23.0.tar.gz"
+    sha256 "b3f43d496c6daba4493e7c431722aeb7dbc6288f52a6e04e7b6023b0247817e6"
+  end
+  
   def install
+    ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python3.7/site-packages"
+    %w[user-agents requests].each do |r|
+      resource(r).stage do
+        system "python3", *Language::Python.setup_install_args(libexec/"vendor")
+      end
+    end
+
     ENV.prepend_create_path "PYTHONPATH", libexec/"lib/python3.7/site-packages"
     system "python3", *Language::Python.setup_install_args(libexec)
 
