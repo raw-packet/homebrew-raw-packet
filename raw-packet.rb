@@ -85,7 +85,7 @@ class RawPacket < Formula
     sha256 "2dee9ffdd16292878336a58d04a20f0ffe95555465fee7c9bd23b3490ef2abf3"
   end
 
-  resource "ua_parser" do
+  resource "ua-parser" do
     url "https://files.pythonhosted.org/packages/92/68/b5c60fc7386d95de9d66a42b9a9d4898d74de895368964b198003042e297/ua-parser-0.10.0.tar.gz"
     sha256 "47b1782ed130d890018d983fac37c2a80799d9e0b9c532e734c67cf70f185033"
   end
