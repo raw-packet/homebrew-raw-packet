@@ -11,6 +11,10 @@ class RawPacket < Formula
   depends_on "nmap"
   
   def install
-    system "python3", "setup.py", "install", "--install-scripts=/usr/local/bin", "--install-lib=/usr/local/lib/python3.7/site-packages"
+    ENV.prepend_create_path "PYTHONPATH", libexec/"lib/python3.7/site-packages"
+    system "python3", *Language::Python.setup_install_args(libexec)
+
+    bin.install Dir[libexec/"bin/*"]
+    bin.env_script_all_files(libexec/"bin", :PYTHONPATH => ENV["PYTHONPATH"])
   end
 end
