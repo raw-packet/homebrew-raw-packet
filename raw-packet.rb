@@ -11,6 +11,6 @@ class RawPacket < Formula
 
   def install
     bin.mkpath
-    system "python3", "setup.py", "install"
+    system "sudo", "python3", "setup.py", "install"
   end
 end
