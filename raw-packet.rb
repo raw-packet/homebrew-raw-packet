@@ -5,7 +5,7 @@ class RawPacket < Formula
     sha256 "87ec91531e1256c1637017602dcd1bb3ed3b752d5abc2bb8d8ad2919ac50234a"
   end
   
-  depends_on "python@3.8"
+  depends_on "python"
   depends_on "wireshark"
   depends_on "nmap"
 
