@@ -2,8 +2,8 @@ class RawPacket < Formula
   
   desc "This project implements network protocols such as Ethernet ARP IPv4 UDP TCP DHCPv4 ICMPv4 IPv6 DHCPv6 ICMPv6 DNS MDNS on raw socket."
   homepage "https://raw-packet.github.io/"
-  url "https://test-files.pythonhosted.org/packages/6b/88/45b3da1b98f40305f4541bb5cddf8f4111b197bf4e137a1f2bfeb46795b3/raw_packet-0.2.1.dev10.tar.gz"
-  sha256 "39a389e0a421b6e079cafb8f96a857644229777126b4fc75e209d261488626ed"
+  url "https://files.pythonhosted.org/packages/47/4d/1bd23d30a3544b9c7f7ecd453c49ef3beb29b5cb0172629a07c8291ed7f7/raw_packet-0.2.1.tar.gz"
+  sha256 "54e716b97d1d1b3b0475fc28aa1c32db6f7c0e1157ec0d7a058c20dcf7d85022"
   head "https://github.com/raw-packet/raw-packet.git"
   
   depends_on "python"
